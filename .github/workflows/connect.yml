@@ -21,7 +21,7 @@ jobs:
         run: npm run build
 
       - name: Deploy to InfinityFree
-        uses: actions/ftp-deploy@v3
+        uses: lkcodie/dse23
         with:
           server: infinityfree.net
           username: if0_35014635
