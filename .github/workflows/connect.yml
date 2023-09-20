@@ -21,9 +21,9 @@ jobs:
         run: npm run build
 
       - name: Deploy to InfinityFree
-        uses: samuelmeuli/ftp-deploy@v2
+        uses: actions/ftp-deploy@v3
         with:
           server: infinityfree.net
           username: if0_35014635
           password: xD6rZZgZaunTK
-          remote-directory: public_html
+          remote-directory: htdocs
