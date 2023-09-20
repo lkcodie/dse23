@@ -1,0 +1,29 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Deploy to InfinityFree
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build the application
+        run: npm run build
+
+      - name: Deploy to InfinityFree
+        uses: samuelmeuli/ftp-deploy@v2
+        with:
+          server: infinityfree.net
+          username: if0_35014635
+          password: xD6rZZgZaunTK
+          remote-directory: public_html
